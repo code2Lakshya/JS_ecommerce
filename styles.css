@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    padding: 0px 30px;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+nav{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+}
+nav p{
+    font-size: 30px;
+    font-weight: 700;
+}
+nav ul{
+    display: flex;
+    gap:20px;
+    list-style: none;
+}
+nav ul li{
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+nav ul li:hover{
+    color: red;
+}
+#close{
+    display: none;
+}
+#open{
+    display: none;
+    font-size: 16px;
+}
+.search-bar{
+    display: flex;
+    gap: 6px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid grey;
+    font-size: 16px;
+    font-weight: 500;
+}
+.search-bar input{
+    padding: 7px 12px;
+    border: none;
+    outline: none;
+}
+.search-bar button{
+    border: none;
+    padding: 0 10px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.search-bar button:hover{
+    opacity: 0.9;
+    background-color: rgb(200, 196, 196);
+}
+main{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.tab{
+    display: none;
+    width: 100%;
+    grid-template-columns: repeat(4,1fr);
+}
+.tab.active{
+    display: grid;
+    gap:20px;
+    margin-top: 30px;
+}
+.card{
+    width: 100%;
+    padding: 15px 10px;
+    background-color: rgb(201, 197, 197);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+    border: 1px solid black;
+    transition: all 0.5s;
+}
+.card:hover{
+    box-shadow: 0 0 30px 1px rgba(0,0,0,0.5);
+}
+img{
+    width: 200px;
+     height: 200px;
+     border-radius: 20px;
+ }
+.card #title{
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: 600;
+}
+[data-id='cart'] > p{
+    font-size: 15px;
+    font-weight: 600;
+}
+.btn.active{
+    color: red;
+}
+.itemBtn{
+    padding: 7px 10px;
+    background-color: rgb(216, 44, 44);
+    color: white;
+    border: 1px solid red;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+.itemBtn:hover{
+    cursor: pointer;
+    color: red;
+    background-color: white;
+}
+@media screen and (max-width: 1150px) {
+    .tab{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (max-width: 900px) {
+    .tab{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width: 850px) {
+    nav p{
+        font-size: 20px;
+    }
+    nav ul{
+        position: fixed;
+        top:0;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: black;
+        color: white;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+    }
+    nav ul.active{
+        transform: translateX(0);
+    }
+    #close{
+        display: inline-flex;
+        position: absolute;
+        top:5px;
+        right: 10px;
+    }
+    #open{
+        display: inline-flex;
+        transition: all 0.5s;
+    }
+    #open:hover{
+        cursor: pointer;
+        color:red;
+    }
+    .card img{
+        width: 120px;
+        height: 120px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .item-btn{
+        display: flex;
+        flex-direction: column;
+        gap:6px;
+    }
+}
+@media screen and (max-width: 450px){
+    .tab{
+        grid-template-columns: 1fr;
+    }
+}
